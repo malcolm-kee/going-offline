@@ -51,7 +51,10 @@ addEventListener('fetch', fetchEvent => {
       })
       .catch(err => {
         console.log(err);
-        return caches.match('/offline.html');
+        if (request.headers.get('Accept').includes('text/html')) {
+          return caches.match('/offline.html');
+        }
+        throw err;
       })
   );
 });
