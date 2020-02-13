@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Going Offline</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="max-w-xl mx-auto p-3">
+      <h1 class="text-4xl font-semibold text-gray-700">Offline</h1>
+      <p>
+        The application is offline at the moment.
+      </p>
+      <script>
+        window.addEventListener('online', function(ev) {
+          if (navigator.onLine) {
+            window.location.reload();
+          }
+        });
+      </script>
+    </main>
+  </body>
+</html>
